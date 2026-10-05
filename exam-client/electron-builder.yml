@@ -1,0 +1,26 @@
+appId: com.mprcollege.exam
+
+productName: MPR Exam Client
+
+directories:
+  output: dist
+
+files:
+  - "**/*"
+
+win:
+  target:
+    - nsis
+
+  artifactName: "MPR-Exam-Client-${version}-Windows.${ext}"
+
+nsis:
+  oneClick: false
+
+  allowToChangeInstallationDirectory: false
+
+  createDesktopShortcut: true
+
+  createStartMenuShortcut: true
+
+  shortcutName: "MPR Exam Client"

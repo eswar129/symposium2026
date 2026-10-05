@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Competition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Screen 1: login -->
+  <div id="login" class="screen center">
+    <h1>Web Development Competition</h1>
+    <ul class="rules">
+      <li>Duration: 60 minutes. The timer starts when you press Start.</li>
+      <li>The exam runs in fullscreen.</li>
+      <li>Alt+Tab, Win key, Esc or switching tabs locks the screen. The invigilator password is needed to continue.</li>
+      <li>You can open other tabs only after you submit.</li>
+    </ul>
+    <p id="status">Waiting for the admin to start the exam…</p>
+    <input id="team" placeholder="Team name or ID" />
+    <input id="code" placeholder="Exam code" />
+    <button id="startBtn" disabled>Start exam</button>
+    <p id="err" class="err"></p>
+  </div>
+
+  <!-- Screen 2: exam -->
+  <div id="exam" class="screen exam" hidden>
+    <header>
+      <b id="teamName"></b>
+      <span id="timer">60:00</span>
+    </header>
+
+    <aside id="questions"></aside>
+
+    <div class="editor">
+      <nav>
+        <button data-tab="html" class="on">HTML</button>
+        <button data-tab="css">CSS</button>
+        <button data-tab="js">JS</button>
+      </nav>
+      <textarea id="html" spellcheck="false"><h1>Hello</h1></textarea>
+      <textarea id="css" spellcheck="false" hidden></textarea>
+      <textarea id="js" spellcheck="false" hidden></textarea>
+      <div class="submit-bar">
+        <button id="submitBtn">Submit</button>
+      </div>
+    </div>
+
+    <iframe id="preview" title="preview" sandbox="allow-scripts"></iframe>
+
+    <!-- Submit password page -->
+    <div id="submitModal" class="lock" hidden>
+      <h2>Submit exam</h2>
+      <p>Ask the invigilator to enter the password to submit.</p>
+      <input id="spw" type="password" placeholder="Invigilator password" />
+      <div>
+        <button id="confirmSubmit">Submit</button>
+        <button id="cancelSubmit" class="ghost">Cancel</button>
+      </div>
+      <p id="submitErr" class="err"></p>
+    </div>
+
+    <!-- Lock page (Alt+Tab, Win key, Esc, tab switch) -->
+    <div id="lock" class="lock" hidden>
+      <h2>Exam locked</h2>
+      <p>A restricted action was detected. Ask the invigilator to enter the password.</p>
+      <input id="pw" type="password" placeholder="Invigilator password" />
+      <button id="unlockBtn">Unlock</button>
+      <p id="lockErr" class="err"></p>
+    </div>
+  </div>
+
+  <!-- Screen 3: done -->
+  <div id="done" class="screen center" hidden>
+    <h1>Submitted</h1>
+    <p>Thank you, <span id="doneTeam"></span>. You can now close this window.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

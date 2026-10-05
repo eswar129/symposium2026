@@ -1,0 +1,4 @@
+[
+  { "id": 1, "title": "Task 1: Portfolio page", "description": "Build a responsive one-page portfolio with a header, about section and contact form." },
+  { "id": 2, "title": "Task 2: Interactivity", "description": "Add a dark/light theme toggle using JavaScript." }
+]
