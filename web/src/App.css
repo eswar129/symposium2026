@@ -1,0 +1,5 @@
+.center { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 24px; text-align: center; }
+.rules { text-align: left; max-width: 560px; line-height: 1.7; color: #b8c1cd; }
+.admin { padding: 24px; }
+.admin table { width: 100%; border-collapse: collapse; }
+.admin th, .admin td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); }
